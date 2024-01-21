@@ -22,9 +22,9 @@ public class WalksController : ControllerBase
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery, [FromQuery] string? sortBy, [FromQuery] bool? isAscending)
+    public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery, [FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 100)
     {
-        var walks = await _repository.GetAll(filterOn, filterQuery, sortBy, isAscending ?? true);
+        var walks = await _repository.GetAll(filterOn, filterQuery, sortBy, isAscending ?? true,  pageNumber, pageSize);
         var walkDto = _mapper.Map<List<NewWalkDto>>(walks);
         return Ok(walkDto);
     }
