@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NZWalks.API.Data;
 using NZWalks.API.Mappings;
+using NZWalks.API.Models.Domain;
 using NZWalks.API.Repositories.Class;
 using NZWalks.API.Repositories.Interface;
 
@@ -20,6 +21,7 @@ public static class WalksExtension
         services.AddSwaggerGen();
         services.AddScoped<IRegionRepository, RegionRepository>();
         services.AddScoped<IWalkRepository, WalkRepository>();
+        services.AddHttpContextAccessor();
         services.AddAutoMapper(typeof(MappingProfiles));
         services.AddIdentityCore<IdentityUser>(options =>
             {
@@ -50,6 +52,7 @@ public static class WalksExtension
             };
         });
         services.AddScoped<ITokenRepository, TokenRepository>();
+        services.AddScoped<IImageRepository, ImageRepository>();
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
         return services;
