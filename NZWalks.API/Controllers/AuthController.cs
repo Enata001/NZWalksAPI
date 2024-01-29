@@ -12,13 +12,11 @@ public class AuthController : ControllerBase
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly ITokenRepository _tokenRepository;
-    private readonly ILogger<AuthController> _logger;
 
-    public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository, ILogger<AuthController> logger)
+    public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
     {
         _userManager = userManager;
         _tokenRepository = tokenRepository;
-        _logger = logger;
     }
 
     // GET
@@ -27,8 +25,7 @@ public class AuthController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
     {
-        try
-        {
+       
             var identityUser = new IdentityUser() { Email = registerRequestDto.Email, UserName = registerRequestDto.Email };
             var userResult = await _userManager.CreateAsync(identityUser, registerRequestDto.Password);
             if (!userResult.Succeeded)
@@ -46,12 +43,7 @@ public class AuthController : ControllerBase
             }
 
             return Ok("User was registered! Please login.");
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+       
     }
 
     [HttpPost]
@@ -59,8 +51,7 @@ public class AuthController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
     {
-        try
-        {
+        
             var user = await _userManager.FindByEmailAsync(loginRequestDto.Email);
             if (user is null)
             {
@@ -84,11 +75,6 @@ public class AuthController : ControllerBase
             var response = new LoginResponseDto() { JwtToken = jwtToken};
 
             return Ok(response);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+       
     }
 }

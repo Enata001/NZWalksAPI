@@ -1,5 +1,6 @@
 using Microsoft.Extensions.FileProviders;
 using NZWalks.API.Extensions;
+using NZWalks.API.Middlewares;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExceptionsHandlerMiddleWare>();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

@@ -16,9 +16,17 @@ public class RegionRepository : IRegionRepository
 
     public async Task<List<Region>> GetAllAsync()
     {
-        var regions = await _context.Regions.ToListAsync();
+        try
+        {
+            var regions = await _context.Regions.ToListAsync();
 
-        return regions;
+            return regions;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
     }
 
     public async Task<Region?> GetById(Guid id)

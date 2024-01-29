@@ -1,0 +1,436 @@
+2024-01-29 20:03:49.629 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:03:49.781 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:03:49.782 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:03:49.786 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:03:49.787 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:03:49.787 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:03:50.299 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:03:50.644 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 354.4634ms
+2024-01-29 20:03:50.847 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:03:50.992 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 144.9798ms
+2024-01-29 20:04:12.087 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/Regions - -
+2024-01-29 20:04:12.138 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:04:12.145 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:04:12.146 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/Regions - - - 401 0 - 59.1315ms
+2024-01-29 20:04:41.733 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:04:41.805 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:04:41 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:04:41.839 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:04:41 PM'.
+2024-01-29 20:04:41.840 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:04:41.843 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:04:41.846 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 113.0310ms
+2024-01-29 20:06:32.557 +00:00 [INF] Application is shutting down...
+2024-01-29 20:06:36.666 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:06:36.824 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:06:36.826 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:06:36.830 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:06:36.831 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:06:36.832 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:06:37.125 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:06:37.472 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 352.6247ms
+2024-01-29 20:06:37.705 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:06:37.863 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 157.2055ms
+2024-01-29 20:06:59.780 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:06:59.910 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:06:59 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:06:59.939 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:06:59 PM'.
+2024-01-29 20:06:59.945 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:06:59.955 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:06:59.958 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 177.3828ms
+2024-01-29 20:10:10.604 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:10:10.608 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:10:10 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:10:10.613 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:10:10 PM'.
+2024-01-29 20:10:10.614 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:10:10.615 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:10:10.616 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 11.6603ms
+2024-01-29 20:11:14.508 +00:00 [INF] Application is shutting down...
+2024-01-29 20:11:18.174 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:11:18.302 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:11:18.304 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:11:18.308 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:11:18.309 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:11:18.309 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:11:18.813 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:11:19.082 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 273.6576ms
+2024-01-29 20:11:19.256 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:11:19.387 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.4454ms
+2024-01-29 20:11:30.174 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:11:30.267 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:11:30 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:11:30.289 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:11:30 PM'.
+2024-01-29 20:11:30.294 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:11:30.302 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:11:30.303 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 129.6163ms
+2024-01-29 20:11:53.176 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:11:53.179 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:11:53 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:11:53.182 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:11:53 PM'.
+2024-01-29 20:11:53.184 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:11:53.185 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:11:53.186 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 9.9496ms
+2024-01-29 20:24:10.951 +00:00 [INF] Application is shutting down...
+2024-01-29 20:24:16.541 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:24:16.679 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:24:16.681 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:24:16.685 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:24:16.685 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:24:16.686 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:24:17.098 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:24:17.390 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 296.9072ms
+2024-01-29 20:24:17.590 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:24:17.731 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 140.8437ms
+2024-01-29 20:24:29.677 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/Walks?pageNumber=1&pageSize=100 - -
+2024-01-29 20:24:29.711 +00:00 [INF] Executing endpoint 'NZWalks.API.Controllers.WalksController.GetAll (NZWalks.API)'
+2024-01-29 20:24:29.754 +00:00 [INF] Route matched with {action = "GetAll", controller = "Walks"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller NZWalks.API.Controllers.WalksController (NZWalks.API).
+2024-01-29 20:24:30.074 +00:00 [INF] Executing action method NZWalks.API.Controllers.WalksController.GetAll (NZWalks.API) - Validation state: "Valid"
+2024-01-29 20:24:30.087 +00:00 [INF] Executed action NZWalks.API.Controllers.WalksController.GetAll (NZWalks.API) in 324.5341ms
+2024-01-29 20:24:30.089 +00:00 [INF] Executed endpoint 'NZWalks.API.Controllers.WalksController.GetAll (NZWalks.API)'
+2024-01-29 20:24:30.093 +00:00 [ERR] 796b40f2-5177-4681-876a-41bc60d7a57a: e.Message
+System.Exception: An exception
+   at NZWalks.API.Controllers.WalksController.GetAll(String filterOn, String filterQuery, String sortBy, Nullable`1 isAscending, Int32 pageNumber, Int32 pageSize) in C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\Controllers\WalksController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NZWalks.API.Middlewares.ExceptionsHandlerMiddleWare.InvokeAsync(HttpContext httpContext) in C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\Middlewares\ExceptionsHandlerMiddleWare.cs:line 20
+2024-01-29 20:24:30.143 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/Walks?pageNumber=1&pageSize=100 - - - 500 - application/json;+charset=utf-8 466.5058ms
+2024-01-29 20:25:05.633 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:25:05.703 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:25:05 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:25:05.712 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:25:05 PM'.
+2024-01-29 20:25:05.716 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:25:05.723 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:25:05.724 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 90.8809ms
+2024-01-29 20:26:40.803 +00:00 [INF] Application is shutting down...
+2024-01-29 20:26:44.631 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:26:44.767 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:26:44.769 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:26:44.773 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:26:44.774 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:26:44.775 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:26:45.234 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:26:45.542 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 313.6567ms
+2024-01-29 20:26:45.729 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:26:45.894 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.3241ms
+2024-01-29 20:26:55.791 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/Regions/ - -
+2024-01-29 20:26:55.894 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:26:55 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-01-29 20:26:55.927 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/29/2024 1:15:58 PM', Current time (UTC): '1/29/2024 8:26:55 PM'.
+2024-01-29 20:26:55.933 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Viewer|Admin)
+2024-01-29 20:26:55.941 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-01-29 20:26:55.942 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/Regions/ - - - 401 0 - 151.3034ms
+2024-01-29 20:39:38.618 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNMu8SwAdab7AAWki 3250619
+2024-01-29 20:39:38.623 +00:00 [INF] Executing endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:39:38.661 +00:00 [INF] Route matched with {action = "Upload", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(NZWalks.API.Models.DTO.ImageUploadRequestDto) on controller NZWalks.API.Controllers.ImageController (NZWalks.API).
+2024-01-29 20:39:38.860 +00:00 [INF] Executing action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) - Validation state: "Valid"
+2024-01-29 20:39:38.879 +00:00 [INF] Executed action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.7162ms.
+2024-01-29 20:39:38.889 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[NZWalks.API.Models.Domain.Image, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[NZWalks.API.Repositories.Class.ImageRepository+<Upload>d__4, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-29 20:39:38.964 +00:00 [INF] Executed action NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) in 289.8749ms
+2024-01-29 20:39:38.966 +00:00 [INF] Executed endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:39:38.970 +00:00 [ERR] a3f5631b-a366-4e22-85b0-df6cfabfde99: e.Message
+System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported. Path: $.MoveNextAction.
+ ---> System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported.
+   at System.Text.Json.Serialization.Converters.UnsupportedTypeConverter`1.Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NZWalks.API.Middlewares.ExceptionsHandlerMiddleWare.InvokeAsync(HttpContext httpContext)
+2024-01-29 20:39:39.032 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNMu8SwAdab7AAWki 3250619 - 500 - application/json;+charset=utf-8 413.9109ms
+2024-01-29 20:40:49.311 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryTROmcMnYBsXj0DQZ 1294689
+2024-01-29 20:40:49.321 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:40:49.327 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryTROmcMnYBsXj0DQZ 1294689 - 500 - text/plain;+charset=utf-8 15.8550ms
+2024-01-29 20:40:49.330 +00:00 [INF] Connection id "0HN1112E9ALDG", Request id "0HN1112E9ALDG:00000003": the application completed without reading the entire request body.
+2024-01-29 20:41:41.722 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNkDhehCryoCSflJt 1294690
+2024-01-29 20:41:41.723 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:41:41.727 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNkDhehCryoCSflJt 1294690 - 500 - text/plain;+charset=utf-8 5.4867ms
+2024-01-29 20:41:41.728 +00:00 [INF] Connection id "0HN1112E9ALDG", Request id "0HN1112E9ALDG:00000005": the application completed without reading the entire request body.
+2024-01-29 20:41:55.020 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryLuyDiYELMQgOhojx 1294690
+2024-01-29 20:41:55.022 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:41:55.034 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryLuyDiYELMQgOhojx 1294690 - 500 - text/plain;+charset=utf-8 13.8765ms
+2024-01-29 20:41:55.035 +00:00 [INF] Connection id "0HN1112E9ALDG", Request id "0HN1112E9ALDG:00000007": the application completed without reading the entire request body.
+2024-01-29 20:42:00.241 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundarylvqV07Sj09w4BTMq 1294690
+2024-01-29 20:42:00.243 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:42:00.248 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundarylvqV07Sj09w4BTMq 1294690 - 500 - text/plain;+charset=utf-8 6.3559ms
+2024-01-29 20:42:00.248 +00:00 [INF] Connection id "0HN1112E9ALDG", Request id "0HN1112E9ALDG:00000009": the application completed without reading the entire request body.
+2024-01-29 20:42:29.554 +00:00 [INF] Application is shutting down...
+2024-01-29 20:42:34.040 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:42:34.169 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:42:34.170 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:42:34.173 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:42:34.174 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:42:34.174 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:42:34.740 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:42:35.024 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 288.7274ms
+2024-01-29 20:42:35.207 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:42:35.331 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.2923ms
+2024-01-29 20:42:38.162 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNvIphQzC6p2RTkgC 1294690
+2024-01-29 20:42:38.192 +00:00 [INF] Executing endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:42:38.225 +00:00 [INF] Route matched with {action = "Upload", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(NZWalks.API.Models.DTO.ImageUploadRequestDto) on controller NZWalks.API.Controllers.ImageController (NZWalks.API).
+2024-01-29 20:42:38.415 +00:00 [INF] Executing action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) - Validation state: "Valid"
+2024-01-29 20:42:39.907 +00:00 [INF] Executed DbCommand (71ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Images" ("Id", "FileDescription", "FileExtension", "FileName", "FilePath", "FileSize")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-01-29 20:42:39.952 +00:00 [INF] Executed action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1524.8812ms.
+2024-01-29 20:42:39.966 +00:00 [INF] Executing OkObjectResult, writing value of type 'NZWalks.API.Models.Domain.Image'.
+2024-01-29 20:42:40.014 +00:00 [INF] Executed action NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) in 1780.2583ms
+2024-01-29 20:42:40.018 +00:00 [INF] Executed endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:42:40.033 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryNvIphQzC6p2RTkgC 1294690 - 200 - application/json;+charset=utf-8 1871.0082ms
+2024-01-29 20:43:02.063 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundarypWJInKEwdLqXAd1V 1294692
+2024-01-29 20:43:02.071 +00:00 [INF] Executing endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:43:02.078 +00:00 [INF] Route matched with {action = "Upload", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(NZWalks.API.Models.DTO.ImageUploadRequestDto) on controller NZWalks.API.Controllers.ImageController (NZWalks.API).
+2024-01-29 20:43:02.092 +00:00 [INF] Executing action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) - Validation state: "Valid"
+2024-01-29 20:43:02.095 +00:00 [INF] Executed action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.378ms.
+2024-01-29 20:43:02.096 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[NZWalks.API.Models.Domain.Image, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[NZWalks.API.Repositories.Class.ImageRepository+<Upload>d__4, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-29 20:43:02.125 +00:00 [INF] Executed action NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) in 43.4905ms
+2024-01-29 20:43:02.128 +00:00 [INF] Executed endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:43:02.131 +00:00 [ERR] c1e63178-d346-451e-aa89-73dfdb607c38: e.Message
+System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported. Path: $.MoveNextAction.
+ ---> System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported.
+   at System.Text.Json.Serialization.Converters.UnsupportedTypeConverter`1.Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NZWalks.API.Middlewares.ExceptionsHandlerMiddleWare.InvokeAsync(HttpContext httpContext)
+2024-01-29 20:43:02.151 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Images" ("Id", "FileDescription", "FileExtension", "FileName", "FilePath", "FileSize")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-01-29 20:43:02.167 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundarypWJInKEwdLqXAd1V 1294692 - 500 - application/json;+charset=utf-8 103.9671ms
+2024-01-29 20:44:13.198 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryadjWyKNJQJl7WGMd 1294692
+2024-01-29 20:44:13.204 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:44:13.210 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryadjWyKNJQJl7WGMd 1294692 - 500 - text/plain;+charset=utf-8 11.9984ms
+2024-01-29 20:44:13.214 +00:00 [INF] Connection id "0HN111B98GP0T", Request id "0HN111B98GP0T:00000009": the application completed without reading the entire request body.
+2024-01-29 20:44:28.446 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryMeOOdDwp7C0LPMx4 1294692
+2024-01-29 20:44:28.447 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-01-29 20:44:28.450 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundaryMeOOdDwp7C0LPMx4 1294692 - 500 - text/plain;+charset=utf-8 3.9071ms
+2024-01-29 20:44:28.450 +00:00 [INF] Connection id "0HN111B98GP0T", Request id "0HN111B98GP0T:0000000B": the application completed without reading the entire request body.
+2024-01-29 20:44:52.629 +00:00 [INF] Application is shutting down...
+2024-01-29 20:44:56.477 +00:00 [INF] User profile is available. Using 'C:\Users\emman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-29 20:44:56.637 +00:00 [INF] Now listening on: https://localhost:7277
+2024-01-29 20:44:56.638 +00:00 [INF] Now listening on: http://localhost:5289
+2024-01-29 20:44:56.644 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-29 20:44:56.645 +00:00 [INF] Hosting environment: Development
+2024-01-29 20:44:56.646 +00:00 [INF] Content root path: C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\
+2024-01-29 20:44:57.043 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - -
+2024-01-29 20:44:57.356 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - - - 200 - text/html;charset=utf-8 319.2110ms
+2024-01-29 20:44:57.526 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - -
+2024-01-29 20:44:57.667 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.1305ms
+2024-01-29 20:45:33.835 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundary0M5HbzXZiAbzqBmb 1294695
+2024-01-29 20:45:33.868 +00:00 [INF] Executing endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:45:33.904 +00:00 [INF] Route matched with {action = "Upload", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(NZWalks.API.Models.DTO.ImageUploadRequestDto) on controller NZWalks.API.Controllers.ImageController (NZWalks.API).
+2024-01-29 20:45:34.118 +00:00 [INF] Executing action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) - Validation state: "Valid"
+2024-01-29 20:45:34.136 +00:00 [INF] Executed action method NZWalks.API.Controllers.ImageController.Upload (NZWalks.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.112ms.
+2024-01-29 20:45:34.151 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[NZWalks.API.Models.Domain.Image, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[NZWalks.API.Repositories.Class.ImageRepository+<Upload>d__4, NZWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-29 20:45:34.225 +00:00 [INF] Executed action NZWalks.API.Controllers.ImageController.Upload (NZWalks.API) in 308.8395ms
+2024-01-29 20:45:34.228 +00:00 [INF] Executed endpoint 'NZWalks.API.Controllers.ImageController.Upload (NZWalks.API)'
+2024-01-29 20:45:34.234 +00:00 [ERR] 506aab8a-cb17-459b-9ee3-073972b4b55f: e.Message
+System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported. Path: $.MoveNextAction.
+ ---> System.NotSupportedException: Serialization and deserialization of 'System.Action' instances is not supported.
+   at System.Text.Json.Serialization.Converters.UnsupportedTypeConverter`1.Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(Stream utf8Json, T rootValue, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NZWalks.API.Middlewares.ExceptionsHandlerMiddleWare.InvokeAsync(HttpContext httpContext) in C:\Users\emman\RiderProjects\NZWalks\NZWalks.API\Middlewares\ExceptionsHandlerMiddleWare.cs:line 20
+2024-01-29 20:45:34.619 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Image/Upload multipart/form-data;+boundary=----WebKitFormBoundary0M5HbzXZiAbzqBmb 1294695 - 500 - application/json;+charset=utf-8 784.2004ms
+2024-01-29 20:51:40.521 +00:00 [INF] Application is shutting down...

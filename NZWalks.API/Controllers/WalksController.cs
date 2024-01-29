@@ -27,19 +27,15 @@ public class WalksController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery, [FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 100)
     {
-        try
-        {
+       
+           
             _logger.LogInformation("Getting all walks...");
             var walks = await _repository.GetAll(filterOn, filterQuery, sortBy, isAscending ?? true,  pageNumber, pageSize);
             var walkDto = _mapper.Map<List<NewWalkDto>>(walks);
             _logger.LogInformation($"Results: {JsonSerializer.Serialize(walkDto)}");
             return Ok(walkDto);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+        
+        
     }
 
     [HttpGet]
@@ -80,26 +76,19 @@ public class WalksController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody]UpdateWalkDto walkDto)
     {
-        try
-        {
+        
 
             var walkModel = _mapper.Map<Walk>(walkDto);
             await _repository.Update(id, walkModel);
             return NoContent();
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+        
     }
 
     [HttpDelete]
     [Route("{id:guid}")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
-        try
-        {
+        
             var walk = await _repository.Remove(id);
             if (walk is null)
             {
@@ -109,11 +98,6 @@ public class WalksController : ControllerBase
             var walkDto = _mapper.Map<NewWalkDto>(walk);
         
             return Ok(walkDto);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+       
     }
 }

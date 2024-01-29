@@ -29,19 +29,14 @@ public class RegionsController : ControllerBase
     [Authorize(Roles = "Viewer, Admin")]
     public async Task<IActionResult> GetAll()
     {
-        try
-        {
+        
             _logger.LogInformation("Calling GetALlRegions action method");
             var regions = await _regionRepository.GetAllAsync();
             var regionsDto = _mapper.Map<List<RegionDto>>(regions);
             _logger.LogInformation($"Finished with: {JsonSerializer.Serialize(regions)}");
             return Ok(regionsDto);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        
+       
     }
 
     [HttpGet]
@@ -49,8 +44,7 @@ public class RegionsController : ControllerBase
     [Route("{id:guid}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
-        try
-        {
+        
             var region = await _regionRepository.GetById(id);
             if (region is null)
             {
@@ -60,12 +54,8 @@ public class RegionsController : ControllerBase
             var regionDto = _mapper.Map<RegionDto>(region);
 
             return Ok(regionDto);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+        
+        
     }
 
     [HttpPost]
@@ -73,8 +63,7 @@ public class RegionsController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create([FromBody] NewRegionDto regionDto)
     {
-        try
-        {
+        
             var regionModel = _mapper.Map<Region>(regionDto);
             var region = await _regionRepository.CreateAsync(regionModel);
 
@@ -82,12 +71,7 @@ public class RegionsController : ControllerBase
 
             return CreatedAtAction(nameof(GetById), new { id = region.Id }, newRegionDto);
 
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+       
     }
 
     [HttpPut]
@@ -96,8 +80,7 @@ public class RegionsController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> UpdateRegion([FromRoute] Guid id, [FromBody] NewRegionDto regionDto)
     {
-        try
-        {
+        
             var regionModel = _mapper.Map<Region>(regionDto);
             var region = await _regionRepository.Update(id, regionModel);
             if (region is null)
@@ -106,12 +89,8 @@ public class RegionsController : ControllerBase
             }
 
             return NoContent();
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+        
+        
     }
 
     [HttpDelete]
@@ -119,8 +98,7 @@ public class RegionsController : ControllerBase
     [Route("{id:guid}")]
     public async Task<IActionResult> DeleteRegion([FromRoute] Guid id)
     {
-        try
-        {
+       
             var region = await _regionRepository.Remove(id);
             if (region is null)
             {
@@ -130,11 +108,6 @@ public class RegionsController : ControllerBase
             var deletedRegionDto = _mapper.Map<RegionDto>(region);
 
             return Ok(deletedRegionDto);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError("error");
-            throw;
-        }
+        
     }
 }

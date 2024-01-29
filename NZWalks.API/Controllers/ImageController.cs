@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NZWalks.API.Models.Domain;
 using NZWalks.API.Models.DTO;
 using NZWalks.API.Repositories.Interface;
@@ -11,19 +10,16 @@ namespace NZWalks.API.Controllers;
 public class ImageController : ControllerBase
 {
     private readonly IImageRepository _repository;
-    private readonly ILogger<ImageController> _logger;
 
-    public ImageController(IImageRepository repository, ILogger<ImageController> logger)
+    public ImageController(IImageRepository repository)
     {
         _repository = repository;
-        _logger = logger;
     }
     [HttpPost]
     [Route("Upload")]
     public async Task<IActionResult> Upload([FromForm] ImageUploadRequestDto imageRequest)
     {
-        try
-        {
+        
 
             ValidateFile(imageRequest);
             if (!ModelState.IsValid)
@@ -41,21 +37,16 @@ public class ImageController : ControllerBase
             };
 
 
-            var result = await _repository.Upload(imageDomain);
+            var result =  _repository.Upload(imageDomain);
         
         
             return Ok(result);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e.Message);
-            throw;
-        }
+       
     }
 
    private void ValidateFile(ImageUploadRequestDto imageRequest)
     {
-        var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png" };
+        var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
         if (!allowedExtensions.Contains(Path.GetExtension(imageRequest.File.FileName)))
         {
             ModelState.AddModelError("File", "Unsupported File Type");
