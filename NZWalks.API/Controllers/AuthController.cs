@@ -12,11 +12,13 @@ public class AuthController : ControllerBase
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly ITokenRepository _tokenRepository;
+    private readonly ILogger<AuthController> _logger;
 
-    public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
+    public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository, ILogger<AuthController> logger)
     {
         _userManager = userManager;
         _tokenRepository = tokenRepository;
+        _logger = logger;
     }
 
     // GET
@@ -25,23 +27,31 @@ public class AuthController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
     {
-        var identityUser = new IdentityUser() { Email = registerRequestDto.Email, UserName = registerRequestDto.Email };
-        var userResult = await _userManager.CreateAsync(identityUser, registerRequestDto.Password);
-        if (!userResult.Succeeded)
+        try
         {
-            return BadRequest("An error occured. Please try again");
-        }
-
-        if (registerRequestDto.Roles.Any())
-        {
-            userResult = await _userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);
+            var identityUser = new IdentityUser() { Email = registerRequestDto.Email, UserName = registerRequestDto.Email };
+            var userResult = await _userManager.CreateAsync(identityUser, registerRequestDto.Password);
             if (!userResult.Succeeded)
             {
-                return BadRequest("Something went wrong");
+                return BadRequest("An error occured. Please try again");
             }
-        }
 
-        return Ok("User was registered! Please login.");
+            if (registerRequestDto.Roles.Any())
+            {
+                userResult = await _userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);
+                if (!userResult.Succeeded)
+                {
+                    return BadRequest("Something went wrong");
+                }
+            }
+
+            return Ok("User was registered! Please login.");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            throw;
+        }
     }
 
     [HttpPost]
@@ -49,28 +59,36 @@ public class AuthController : ControllerBase
     [ValidateModel]
     public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
     {
-        var user = await _userManager.FindByEmailAsync(loginRequestDto.Email);
-        if (user is null)
+        try
         {
-            return BadRequest("Username or Password Incorrect");
-        }
+            var user = await _userManager.FindByEmailAsync(loginRequestDto.Email);
+            if (user is null)
+            {
+                return BadRequest("Username or Password Incorrect");
+            }
 
-        var isCorrect = await _userManager.CheckPasswordAsync(user, loginRequestDto.Password);
-        if (!isCorrect)
-        {
-            return BadRequest("Username or Password Incorrect");
-        }
+            var isCorrect = await _userManager.CheckPasswordAsync(user, loginRequestDto.Password);
+            if (!isCorrect)
+            {
+                return BadRequest("Username or Password Incorrect");
+            }
 
-        var roles = await _userManager.GetRolesAsync(user);
+            var roles = await _userManager.GetRolesAsync(user);
 
-        if (roles is null)
-        {
-            return BadRequest("Incorrect Username or Password");
-        }
+            if (roles is null)
+            {
+                return BadRequest("Incorrect Username or Password");
+            }
     
-        var jwtToken = _tokenRepository.CreateJwtToken(user, roles.ToList());
-        var response = new LoginResponseDto() { JwtToken = jwtToken};
+            var jwtToken = _tokenRepository.CreateJwtToken(user, roles.ToList());
+            var response = new LoginResponseDto() { JwtToken = jwtToken};
 
-        return Ok(response);
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            throw;
+        }
     }
 }

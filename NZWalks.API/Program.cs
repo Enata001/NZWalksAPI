@@ -1,9 +1,10 @@
 using Microsoft.Extensions.FileProviders;
 using NZWalks.API.Extensions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddServices(builder.Configuration);
+builder.Services.AddServices(builder.Configuration, builder.Logging);
 
 var app = builder.Build();
 

@@ -11,36 +11,46 @@ namespace NZWalks.API.Controllers;
 public class ImageController : ControllerBase
 {
     private readonly IImageRepository _repository;
+    private readonly ILogger<ImageController> _logger;
 
-    public ImageController(IImageRepository repository)
+    public ImageController(IImageRepository repository, ILogger<ImageController> logger)
     {
         _repository = repository;
+        _logger = logger;
     }
     [HttpPost]
     [Route("Upload")]
     public async Task<IActionResult> Upload([FromForm] ImageUploadRequestDto imageRequest)
     {
-        
-        ValidateFile(imageRequest);
-        if (!ModelState.IsValid)
+        try
         {
-            return BadRequest();
+
+            ValidateFile(imageRequest);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var imageDomain = new Image()
+            {
+                File = imageRequest.File,
+                FileName = imageRequest.FileName,
+                FileDescription = imageRequest.FileDescription ?? "",
+                FileExtension = Path.GetExtension(imageRequest.File.FileName),
+                FileSize = imageRequest.File.Length
+            };
+
+
+            var result = await _repository.Upload(imageDomain);
+        
+        
+            return Ok(result);
         }
-
-        var imageDomain = new Image()
+        catch (Exception e)
         {
-            File = imageRequest.File,
-            FileName = imageRequest.FileName,
-            FileDescription = imageRequest.FileDescription ?? "",
-            FileExtension = Path.GetExtension(imageRequest.File.FileName),
-            FileSize = imageRequest.File.Length
-        };
-
-
-        var result = await _repository.Upload(imageDomain);
-        
-        
-        return Ok(result);
+            _logger.LogError(e.Message);
+            throw;
+        }
     }
 
    private void ValidateFile(ImageUploadRequestDto imageRequest)

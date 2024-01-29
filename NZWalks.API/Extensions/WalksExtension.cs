@@ -5,16 +5,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NZWalks.API.Data;
 using NZWalks.API.Mappings;
-using NZWalks.API.Models.Domain;
 using NZWalks.API.Repositories.Class;
 using NZWalks.API.Repositories.Interface;
+using Serilog;
 
 
 namespace NZWalks.API.Extensions;
 
 public static class WalksExtension
 {
-    public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration,
+        ILoggingBuilder loggingBuilder)
     {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
@@ -22,6 +23,13 @@ public static class WalksExtension
         services.AddScoped<IRegionRepository, RegionRepository>();
         services.AddScoped<IWalkRepository, WalkRepository>();
         services.AddHttpContextAccessor();
+        var logger = new LoggerConfiguration().WriteTo.Console().WriteTo
+            .File("Logs/NZWalksLog.txt", rollingInterval: RollingInterval.Day).MinimumLevel.Information()
+            .CreateLogger();
+
+        loggingBuilder.ClearProviders();
+        loggingBuilder.AddSerilog(logger);
+
         services.AddAutoMapper(typeof(MappingProfiles));
         services.AddIdentityCore<IdentityUser>(options =>
             {
@@ -30,7 +38,6 @@ public static class WalksExtension
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
-                
             }).AddRoles<IdentityRole>()
             .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("NZWalks")
             .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
