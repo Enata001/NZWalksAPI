@@ -37,7 +37,7 @@ public class ImageController : ControllerBase
             };
 
 
-            var result =  _repository.Upload(imageDomain);
+            var result =  await _repository.Upload(imageDomain);
         
         
             return Ok(result);
